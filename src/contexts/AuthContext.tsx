@@ -7,10 +7,12 @@ interface AuthContextType {
   user: User | null;
   encryptionKey: CryptoKey | null;
   loading: boolean;
+  needsMasterPassword: boolean;
   signUp: (email: string, password: string, masterPassword: string) => Promise<void>;
   signIn: (email: string, password: string, masterPassword: string) => Promise<void>;
   signOut: () => Promise<void>;
   updateMasterPassword: (oldPassword: string, newPassword: string) => Promise<void>;
+  unlockVault: (masterPassword: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -27,6 +29,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [encryptionKey, setEncryptionKey] = useState<CryptoKey | null>(null);
   const [loading, setLoading] = useState(true);
+  const [needsMasterPassword, setNeedsMasterPassword] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -36,6 +39,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         const { data: { session } } = await supabase.auth.getSession();
         if (mounted) {
           setUser(session?.user ?? null);
+          if (session?.user) {
+            setNeedsMasterPassword(true);
+          }
           setLoading(false);
         }
       } catch (error) {
@@ -53,6 +59,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setUser(session?.user ?? null);
         if (!session?.user) {
           setEncryptionKey(null);
+          setNeedsMasterPassword(false);
+        } else {
+          setNeedsMasterPassword(true);
         }
       }
     });
@@ -112,6 +121,33 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const key = await EncryptionService.deriveKey(masterPassword, profile.encryption_salt);
     setEncryptionKey(key);
+    setNeedsMasterPassword(false);
+  };
+
+  const unlockVault = async (masterPassword: string) => {
+    if (!user) throw new Error('No user logged in');
+
+    const { data: profile, error: profileError } = await supabase
+      .from('users_profile')
+      .select('encryption_salt, master_password_hash')
+      .eq('id', user.id)
+      .maybeSingle();
+
+    if (profileError) throw profileError;
+    if (!profile) throw new Error('User profile not found');
+
+    const masterPasswordHash = await EncryptionService.hashMasterPassword(
+      masterPassword,
+      profile.encryption_salt
+    );
+
+    if (masterPasswordHash !== profile.master_password_hash) {
+      throw new Error('Invalid master password');
+    }
+
+    const key = await EncryptionService.deriveKey(masterPassword, profile.encryption_salt);
+    setEncryptionKey(key);
+    setNeedsMasterPassword(false);
   };
 
   const signOut = async () => {
@@ -184,10 +220,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     user,
     encryptionKey,
     loading,
+    needsMasterPassword,
     signUp,
     signIn,
     signOut,
     updateMasterPassword,
+    unlockVault,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

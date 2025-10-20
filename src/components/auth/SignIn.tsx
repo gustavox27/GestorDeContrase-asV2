@@ -34,7 +34,7 @@ export const SignIn = ({ onToggle }: SignInProps) => {
   };
 
   return (
-    <div className="w-full max-w-md p-6 sm:p-8 bg-white rounded-2xl shadow-xl">
+    <div className="w-full max-w-md p-6 sm:p-8 bg-white rounded-2xl shadow-2xl backdrop-blur-sm">
       <div className="flex flex-col items-center mb-6 sm:mb-8">
         <div className="w-12 h-12 sm:w-16 sm:h-16 theme-bg-gradient rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
           <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />

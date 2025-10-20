@@ -1,4 +1,4 @@
-const CACHE_NAME = 'securevault-v1';
+const CACHE_NAME = 'secureGCC-v1';
 const urlsToCache = [
   '/',
   '/index.html',

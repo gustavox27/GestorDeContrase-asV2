@@ -99,7 +99,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       }
 
       .theme-border-primary {
-        border-color: ${currentTheme.primary};
+        --tw-ring-color: ${currentTheme.primary};
       }
 
       .theme-hover-bg:hover {

@@ -67,11 +67,15 @@ export const Sidebar = ({ isCollapsed, onToggle, currentSection, onSectionChange
               )}
               <button
                 onClick={onToggle}
-                className="p-2 hover:bg-gray-100 rounded-lg transition ml-auto lg:ml-0"
+                className="p-2 hover:bg-gray-100 rounded-lg transition ml-auto lg:ml-0 lg:theme-bg-gradient lg:hover:opacity-90"
                 aria-label={isCollapsed ? 'Abrir menú' : 'Cerrar menú'}
               >
                 <X className="w-5 h-5 text-gray-600 lg:hidden" />
-                <span className="hidden lg:block w-5 h-5"></span>
+                <div className="hidden lg:flex flex-col gap-1">
+                  <div className="w-5 h-0.5 bg-white rounded"></div>
+                  <div className="w-5 h-0.5 bg-white rounded"></div>
+                  <div className="w-5 h-0.5 bg-white rounded"></div>
+                </div>
               </button>
             </div>
           </div>
@@ -107,8 +111,8 @@ export const Sidebar = ({ isCollapsed, onToggle, currentSection, onSectionChange
           <div className="p-3 sm:p-4 border-t border-gray-200">
             {!isCollapsed && (
               <div className="text-xs text-gray-500 space-y-1">
-                <p className="font-medium">SecureVault v1.0.0</p>
-                <p className="break-all">support@securevault.com</p>
+                <p className="font-medium">SecureGCC v4.3.18</p>
+                <p className="break-all">gustavo18n@hotmail.com</p>
               </div>
             )}
           </div>

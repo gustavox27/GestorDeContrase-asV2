@@ -295,7 +295,7 @@ export const MainDashboard = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-pattern flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
           <p className="text-gray-600">{t('common.loading')}</p>
@@ -305,7 +305,7 @@ export const MainDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-50">
+    <div className="min-h-screen bg-pattern">
       <Sidebar
         isCollapsed={sidebarCollapsed}
         onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
@@ -325,10 +325,10 @@ export const MainDashboard = () => {
               <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                 <button
                   onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                  className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition flex-shrink-0"
+                  className="lg:hidden p-2 theme-bg-gradient hover:opacity-90 rounded-lg transition flex-shrink-0 shadow-sm"
                   aria-label="Toggle menu"
                 >
-                  <Menu className="w-5 h-5 text-gray-600" />
+                  <Menu className="w-5 h-5 text-white" />
                 </button>
                 <div className="w-8 h-8 sm:w-10 sm:h-10 theme-bg-gradient rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                   <Shield className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
