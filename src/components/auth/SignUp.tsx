@@ -54,7 +54,7 @@ export const SignUp = ({ onToggle }: SignUpProps) => {
   };
 
   return (
-    <div className="w-full max-w-md p-6 sm:p-8 bg-white rounded-2xl shadow-xl">
+    <div className="w-full max-w-md p-6 sm:p-8 bg-white rounded-2xl shadow-2xl backdrop-blur-sm">
       <div className="flex flex-col items-center mb-6 sm:mb-8">
         <div className="w-12 h-12 sm:w-16 sm:h-16 theme-bg-gradient rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg">
           <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -74,6 +74,7 @@ export const SignUp = ({ onToggle }: SignUpProps) => {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full pl-9 sm:pl-10 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 theme-border-primary focus:border-transparent outline-none transition"
               placeholder="tu@email.com"
+              autoComplete="email"
               required
             />
           </div>
@@ -89,6 +90,7 @@ export const SignUp = ({ onToggle }: SignUpProps) => {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 theme-border-primary focus:border-transparent outline-none transition"
               placeholder="••••••••"
+              autoComplete="new-password"
               required
             />
             <button
@@ -112,6 +114,7 @@ export const SignUp = ({ onToggle }: SignUpProps) => {
               onChange={(e) => setMasterPassword(e.target.value)}
               className="w-full pl-9 sm:pl-10 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 theme-border-primary focus:border-transparent outline-none transition"
               placeholder="••••••••"
+              autoComplete="off"
               required
             />
             <button
@@ -150,6 +153,7 @@ export const SignUp = ({ onToggle }: SignUpProps) => {
               onChange={(e) => setConfirmMasterPassword(e.target.value)}
               className="w-full pl-9 sm:pl-10 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 theme-border-primary focus:border-transparent outline-none transition"
               placeholder="••••••••"
+              autoComplete="off"
               required
             />
           </div>

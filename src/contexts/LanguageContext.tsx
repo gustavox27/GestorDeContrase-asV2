@@ -20,7 +20,7 @@ export const useLanguage = () => {
 
 const translations: Record<Language, Record<string, string>> = {
   es: {
-    'app.title': 'SecureVault',
+    'app.title': 'Secure PRO - GCC',
     'app.tagline': 'Gestor de contraseñas seguro',
 
     'auth.signIn': 'Iniciar Sesión',
@@ -42,6 +42,10 @@ const translations: Record<Language, Record<string, string>> = {
     'auth.alreadyHaveAccount': '¿Ya tienes una cuenta?',
     'auth.signInLink': 'Iniciar sesión',
     'auth.signUpLink': 'Registrarse',
+    'auth.unlockVault': 'Desbloquear Bóveda',
+    'auth.enterMasterPassword': 'Ingresa tu contraseña maestra para acceder a tu bóveda',
+    'auth.masterPasswordPlaceholder': 'Ingresa tu contraseña maestra',
+    'auth.unlock': 'Desbloquear',
 
     'nav.home': 'Inicio',
     'nav.notifications': 'Centro de notificación',
@@ -100,7 +104,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     'settings.title': 'Opciones',
     'settings.userInfo': 'Información del Usuario',
-    'settings.registeredUser': 'Usuario registrado en SecureVault',
+    'settings.registeredUser': 'Usuario registrado en SecureGCC',
     'settings.export': 'Exportar Datos',
     'settings.exportJSON': 'Exportar como JSON',
     'settings.exportCSV': 'Exportar como CSV',
@@ -114,7 +118,7 @@ const translations: Record<Language, Record<string, string>> = {
     'settings.about': 'Acerca de',
     'settings.version': 'Versión',
     'settings.contact': 'Contacto',
-    'settings.aboutText': 'SecureVault - Gestor de contraseñas seguro con cifrado de extremo a extremo',
+    'settings.aboutText': 'SecureGCC - Gestor de contraseñas seguro con cifrado de extremo a extremo',
     'settings.language': 'Idioma',
     'settings.selectLanguage': 'Selecciona tu idioma preferido',
 
@@ -153,6 +157,10 @@ const translations: Record<Language, Record<string, string>> = {
     'auth.alreadyHaveAccount': 'Already have an account?',
     'auth.signInLink': 'Sign in',
     'auth.signUpLink': 'Sign up',
+    'auth.unlockVault': 'Unlock Vault',
+    'auth.enterMasterPassword': 'Enter your master password to access your vault',
+    'auth.masterPasswordPlaceholder': 'Enter your master password',
+    'auth.unlock': 'Unlock',
 
     'nav.home': 'Home',
     'nav.notifications': 'Notification Center',
@@ -264,6 +272,10 @@ const translations: Record<Language, Record<string, string>> = {
     'auth.alreadyHaveAccount': 'Já tem uma conta?',
     'auth.signInLink': 'Entrar',
     'auth.signUpLink': 'Registrar-se',
+    'auth.unlockVault': 'Desbloquear Cofre',
+    'auth.enterMasterPassword': 'Digite sua senha mestra para acessar seu cofre',
+    'auth.masterPasswordPlaceholder': 'Digite sua senha mestra',
+    'auth.unlock': 'Desbloquear',
 
     'nav.home': 'Início',
     'nav.notifications': 'Central de Notificações',
@@ -375,6 +387,10 @@ const translations: Record<Language, Record<string, string>> = {
     'auth.alreadyHaveAccount': 'Vous avez déjà un compte?',
     'auth.signInLink': 'Se connecter',
     'auth.signUpLink': 'S\'inscrire',
+    'auth.unlockVault': 'Déverrouiller le coffre',
+    'auth.enterMasterPassword': 'Entrez votre mot de passe principal pour accéder à votre coffre',
+    'auth.masterPasswordPlaceholder': 'Entrez votre mot de passe principal',
+    'auth.unlock': 'Déverrouiller',
 
     'nav.home': 'Accueil',
     'nav.notifications': 'Centre de notifications',
@@ -486,6 +502,10 @@ const translations: Record<Language, Record<string, string>> = {
     'auth.alreadyHaveAccount': 'Haben Sie bereits ein Konto?',
     'auth.signInLink': 'Anmelden',
     'auth.signUpLink': 'Registrieren',
+    'auth.unlockVault': 'Tresor entsperren',
+    'auth.enterMasterPassword': 'Geben Sie Ihr Master-Passwort ein, um auf Ihren Tresor zuzugreifen',
+    'auth.masterPasswordPlaceholder': 'Geben Sie Ihr Master-Passwort ein',
+    'auth.unlock': 'Entsperren',
 
     'nav.home': 'Startseite',
     'nav.notifications': 'Benachrichtigungszentrale',

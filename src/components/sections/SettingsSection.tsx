@@ -276,7 +276,7 @@ export const SettingsSection = () => {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0 text-sm">
                 <span className="font-medium text-gray-700">{t('settings.contact')}</span>
                 <a
-                  href="mailto:support@securevault.com"
+                  href="mailto:gustavo18n@hotmail.com"
                   className="text-blue-600 hover:underline break-all"
                 >
                   gustavo18n@Hotmail.com

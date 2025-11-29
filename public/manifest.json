@@ -1,7 +1,7 @@
 {
   "name": "SecureVault - Password Manager",
   "short_name": "SecureVault",
-  "description": "Professional password manager with AES-256 encryption, 2FA, and secure password generation",
+  "description": "Gestor de contraseñas profesional con cifrado AES-256, autenticación de dos factores y generación segura de contraseñas.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#EFF6FF",
